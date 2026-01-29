@@ -1,0 +1,26 @@
+/* Make sure the page doesn't scroll */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.dashboard-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url('/assets/bg2.svg');
+  background-size: cover;           /* ✅ Scales image to cover the entire container */
+  background-position: center;      /* ✅ Keeps image centered */
+  background-repeat: no-repeat;     /* ✅ Prevents image from repeating */
+
+  position: relative;
+  overflow: hidden;
+}
+
+
