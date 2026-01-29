@@ -360,7 +360,7 @@ const CableDefectDetection = ({ toggleTheme, mode }) => {
   const handleUpload = (e) => {
     const reader = new FileReader();
     reader.onload = (event) => {
-       dispatch(resetState({ module }));
+      dispatch(resetState({ module }));
       dispatch(setCapturedImage({ module, image: event.target.result }));
       stopWebcam();
     };
@@ -547,9 +547,10 @@ const CableDefectDetection = ({ toggleTheme, mode }) => {
             justifyContent: "space-between",
             mb: 3,
             px: 2,
+            position: "relative", // important for centering
           }}
         >
-          {/* LEFT — ICON + TEXT */}
+          {/* LEFT — ICON */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
             <motion.div
               animate={{
@@ -567,26 +568,30 @@ const CableDefectDetection = ({ toggleTheme, mode }) => {
                 strokeWidth={2}
               />
             </motion.div>
-
-            <Typography
-              variant="h4"
-              sx={{
-                fontWeight: 800,
-                textTransform: "uppercase",
-                letterSpacing: "0.2em",
-                fontFamily: "'Oswald', sans-serif",
-                background: `linear-gradient(90deg,
-            ${theme.palette.primary.light} 0%,
-            ${theme.palette.primary.main} 50%,
-            ${theme.palette.secondary.main} 100%)`,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                textShadow: `0 0 20px ${alpha(theme.palette.primary.main, 0.5)}`,
-              }}
-            >
-              CABLE DEFECT DETECTION
-            </Typography>
           </Box>
+
+          {/* CENTER — TEXT */}
+          <Typography
+            variant="h4"
+            sx={{
+              position: "absolute",
+              left: "50%",
+              transform: "translateX(-50%)",
+              fontWeight: 800,
+              textTransform: "uppercase",
+              letterSpacing: "0.2em",
+              fontFamily: "'Oswald', sans-serif",
+              background: `linear-gradient(90deg,
+          ${theme.palette.primary.light} 0%,
+          ${theme.palette.primary.main} 50%,
+          ${theme.palette.secondary.main} 100%)`,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              textShadow: `0 0 20px ${alpha(theme.palette.primary.main, 0.5)}`,
+            }}
+          >
+            CABLE DEFECT DETECTION
+          </Typography>
 
           {/* RIGHT — LOGO + THEME TOGGLE */}
           <motion.div
