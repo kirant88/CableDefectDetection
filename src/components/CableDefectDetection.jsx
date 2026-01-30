@@ -1472,10 +1472,10 @@ const CableDefectDetection = ({ toggleTheme, mode }) => {
               target="_blank"
               rel="noopener noreferrer"
               underline="hover"
-              color="inherit"
+              color="primary"
             >
-              C4I4
-            </Link>{" "}
+              C4i4{" "}
+            </Link>
             Vision Lab • Cable Defect Detection System
           </Typography>
         </Stack>
