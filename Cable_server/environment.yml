@@ -1,0 +1,11 @@
+name: hist_cable_env
+dependencies:
+  - python=3.10
+  - opencv
+  - numpy
+  - matplotlib
+  - pip
+  - pip:
+      - ultralytics
+      - gradio
+      - torch
